@@ -1,0 +1,9 @@
+#spring:
+#  application:
+#    name: eureka-server
+
+# (nested)
+# more readable
+# string, boolean, number
+# lightweight
+# list (-)
