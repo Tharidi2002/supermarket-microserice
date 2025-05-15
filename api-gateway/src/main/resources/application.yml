@@ -11,6 +11,8 @@ spring:
   cloud:
     loadbalancer:
       rule: random
+
+
 gateway:
   router:
     - id: product-service
@@ -18,3 +20,10 @@ gateway:
 #      url: http://localhost:8081
       predicates:
         - Path=/product-server/**
+
+
+
+    - id: order-service
+      url: lb://ORDER-SERVICE
+      predicates:
+        -Path=/order-service/**
