@@ -16,14 +16,24 @@ spring:
 gateway:
   router:
     - id: product-service
-      url: lb://PRODUCT-SERVICE
-#      url: http://localhost:8081
+      url: lb://PRODUCT-SERVICE   #      url: http://localhost:8081
       predicates:
         - Path=/product-server/**
-
 
 
     - id: order-service
       url: lb://ORDER-SERVICE
       predicates:
         -Path=/order-service/**
+
+
+    - id: inventory-service
+      url: http://localhost:3000
+      predicates:
+        -Path=/inventory-service/**
+
+
+    - id: customer-service
+      url: http://localhost:5000
+      predicates:
+        -Path=/customer-service/**
